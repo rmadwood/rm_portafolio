@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rm_portafolio</title>
+    <link rel="stylesheet" href="./estilos.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        #particles-js{
+            width: 100%;
+            display: flex;
+            position: absolute;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="blur"></div>
+    
+    <header class="barra_superior">
+        <div class="logo">
+            <img src="./img/gatito.jpg" alt="">
+        </div>
+        <hr class="linea1">
+            <nav class="barra">
+                <a href="#" class="activo">inicio</a>
+                <a href="#" class="conoceme">conoceme</a>
+                <a href="#" class="quiereme">quiereme</a>
+            </nav>
+    </header>
+
+    <div class="barra_lateral">
+        <hr class="linea2">
+        <div class="redes">
+            <a href="#"><i class='bx bxl-youtube'></i></a>
+            <a href="#"><i class='bx bxl-upwork'></i></a>
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <div class="titulo">
+            <p class="portafolio">mi portafolio</p>
+        </div>
+        <div class="parrafo_1">
+            <p>mostrando algunas cositas...</p>
+        </div>
+        <div class="imagen">
+            <img src="./img/bachi.png" alt="" class="bachi">
+            <img src="./img/aro.png" alt="" class="aro">
+        </div>
+        <div class="animacion">
+            <p>animación</p>
+            <video controls autoplay muted loop class="vid_ani_1">
+                <source src="./vid/muestra_5.mp4" type="video/mp4">
+            </video>
+            <video controls muted loop class="vid_ani_2">
+                <source src="./vid/muestra_4.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="reels">
+            <p>reels/tiktoks</p>
+            <video controls autoplay muted loop class="vid_reels_1">
+                <source src="./vid/video_ad_.mp4" type="video/mp4">
+            </video>
+            <video controls muted loop class="vid_reels_2">
+                <source src="./vid/video_ad.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="promocion">
+            <p>promoción</p>
+            <video controls autoplay muted loop class="vid_prom_1">
+                <source src="./vid/muestra_1.mp4" type="video/mp4">
+            </video>
+            <video controls  muted loop class="vid_prom_2">
+                <source src="./vid/video_ad_3.mp4" type="video/mp4">
+            </video>
+        </div>   
+        
+    </div>
+    
+    </div>
+
+    <script src="./js/particles.min.js"></script>
+    <script src="./js/particlesjs-config.json"></script>
+
+    <script>
+const hoverElements = document.querySelectorAll('.animacion, .reels, .promocion, .bachi');
+
+const hiddenDiv = document.querySelector('.blur');
+
+hiddenDiv.style.opacity = 0;
+
+hoverElements.forEach(hoverElement => {
+  hoverElement.addEventListener('mouseover', () => {
+    hiddenDiv.style.opacity = 1;
+  });
+
+  hoverElement.addEventListener('mouseout', () => {
+    hiddenDiv.style.opacity = 0;
+
+    clearTimeout(timeout);
+
+    const timeout = setTimeout(() => {
+    }, 400);
+  });
+});
+    </script>
+
+</body>
+</html>
