@@ -18,7 +18,6 @@ body {
   
   ::-webkit-scrollbar-track {
     background: transparent;
-    padding-top: 100px;
   }
   
   ::-webkit-scrollbar-thumb {
@@ -28,7 +27,7 @@ body {
   
   /* Estilos para Firefox */
   ::-moz-scrollbar {
-    width: 10px;
+    width: 7px;
   }
   ::-moz-scrollbar-track {
     background: transparent;
@@ -49,6 +48,20 @@ body {
     padding-right: 30px;
     justify-content: space-between;
     align-items: center;
+    animation: opacidad .8s ease-out;
+}
+
+@keyframes opacidad {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+.barra_superior P {
+    color: white;
 }
 
 .logo {
@@ -59,6 +72,10 @@ body {
     height: 50px;
     transition: .3s ease-in-out;
     z-index: 600;
+}
+
+.hecho {
+    display: none;
 }
 
 .linea1{
@@ -78,7 +95,8 @@ body {
     width: 70px;
     margin-left: 0;
     justify-content: center;
-    z-index: 99;
+    z-index: 102;
+    animation: opacidad .8s ease-out;
 }
 
 .linea2{
@@ -172,14 +190,14 @@ body {
 }
 
 .blur {
-    position: absolute;
+    position:fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
-    z-index: 100;
+    z-index: 103;
     pointer-events: none;
     transition: opacity .4s ease-in-out;
 }
@@ -192,7 +210,7 @@ body {
     width: 670px;
     height: 670px;
     left: 100px;
-    top: 280px;
+    top: 25%;
     border-radius: 25px;
     box-shadow: 0 0 40px 0px #000000;
     cursor: pointer;
@@ -210,13 +228,13 @@ body {
     width: 300px;
     height: 340px;
     right: 760px;
-    bottom: 50px;
+    bottom: 45px;
     border-radius: 25px;
     box-shadow: 0 0 40px 0px #000000;
     cursor: pointer;
     transition: .3s ease-in-out;
     overflow: auto;
-    z-index: 500;
+    z-index: 104;
     animation: deslizarAbajo .8s ease-out;
 }
 
@@ -294,7 +312,7 @@ body {
     width: 300px;
     height: 540px;
     right: 430px;
-    bottom: 50px;
+    bottom: 45px;
     border-radius: 25px;
     box-shadow: 0 0 40px 0px #000000;
     cursor: pointer;
@@ -321,7 +339,7 @@ body {
     width: 300px;
     height: 230px;
     right: 100px;
-    bottom: 50px;
+    bottom: 45px;
     border-radius: 25px;
     box-shadow: 0 0 40px 0px #000000;
     cursor: pointer;
@@ -384,29 +402,30 @@ body {
     }
 
     .contenedor {
-        width: 90%;
+        width: 85%;
         justify-content: center;
 }
 
     .titulo {
-        font-size: 40px;
+        font-size: 250%;
         letter-spacing: 0px;
         justify-content: center;
         align-items: center;
         text-align: center;
-        left: 0;
+        left: 20%;
     }
 
     .parrafo_1{
         font-size: 25px;
-        top: 5%;
+        top: 3%;
         text-align: center;
     }
 
     .presentacion {
-        width: 75%;
-        height: 22em;
-        top: 40%;
+        width: 85%;
+        height: 20em;
+        top: 50%;
+        left: 22%;
     }
 
     .vid_pre{
@@ -414,6 +433,54 @@ body {
         position: absolute;
         border-radius: 25px;
         width: 85%;
+    }
+
+    .animacion {
+        width: 80%;
+        height: 19em;
+        top: 750px;
+        left: 22%;
+        z-index: 200;
+    }
+
+    .reels {
+        width: 75%;
+        height: 29em;
+        top: 1095px;
+        left: 22%;
+        z-index: 130;
+    }
+
+    .promocion {
+        width: 75%;
+        height: 12em;
+        top: 1600px;
+        left: 22%;
+        z-index: 120;
+    }
+
+    .speech-bubble {
+        display: none;
+    }
+
+    .hecho {
+        display: flex;
+        position: absolute;
+        color: white;
+        width: 420px;
+        height: 30px;
+        bottom: -1100px;
+        left: 11%;
+    }
+
+    .html{
+        opacity: 0;
+    }
+
+    .flecha_1{
+        right: 18px;
+        opacity: 50%;
+        transform: rotate(180deg);
     }
 
   }
