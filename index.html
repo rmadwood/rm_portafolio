@@ -26,11 +26,6 @@
             <img src="./img/gatito.jpg" alt="">
         </div>
         <hr class="linea1">
-            <nav class="barra">
-                <a href="#" class="activo">inicio</a>
-                <a href="#" class="conoceme">conoceme</a>
-                <a href="#" class="quiereme">quiereme</a>
-            </nav>
     </header>
 
     <div class="barra_lateral">
@@ -42,17 +37,21 @@
     </div>
 
     <div class="contenedor">
+        
         <div class="titulo">
-            <p class="portafolio">mi portafolio</p>
+            <p class="portafolio">mi presentación</p>
         </div>
         <div class="parrafo_1">
-            <p>mostrando algunas cositas...</p>
+            <p>Hola, mi nombre es <b>Ricardo Madera</b>, soy <b>editor</b>... y esta es mi presentación...</p>
         </div>
-        <div class="imagen">
-            <img src="./img/bachi.png" alt="" class="bachi">
-            <img src="./img/aro.png" alt="" class="aro">
+        <div class="presentacion">
+            <p>presentación</p>
+            <video controls autoplay muted loop class="vid_pre">
+                <source src="./vid/presentación_ricardo_madera.mp4.mp4" type="video/mp4">
+            </video>
         </div>
         <div class="animacion">
+            <img class="flecha_1" src="./img/subir.png" alt="">
             <p>animación</p>
             <video controls autoplay muted loop class="vid_ani_1">
                 <source src="./vid/muestra_5.mp4" type="video/mp4">
@@ -62,6 +61,7 @@
             </video>
         </div>
         <div class="reels">
+            <img class="flecha_1" src="./img/subir.png" alt="">
             <p>reels/tiktoks</p>
             <video controls autoplay muted loop class="vid_reels_1">
                 <source src="./vid/video_ad_.mp4" type="video/mp4">
@@ -71,6 +71,7 @@
             </video>
         </div>
         <div class="promocion">
+            <img class="flecha_1" src="./img/subir.png" alt="">
             <p>promoción</p>
             <video controls autoplay muted loop class="vid_prom_1">
                 <source src="./vid/muestra_1.mp4" type="video/mp4">
@@ -78,7 +79,14 @@
             <video controls  muted loop class="vid_prom_2">
                 <source src="./vid/video_ad_3.mp4" type="video/mp4">
             </video>
-        </div>   
+        </div> 
+    
+        <div class="speech-bubble">
+            <div class="speech-text">
+                Contáctame :)
+            </div>
+            <div class="speech-triangle"></div>
+        </div>
         
     </div>
     
@@ -88,7 +96,7 @@
     <script src="./js/particlesjs-config.json"></script>
 
     <script>
-const hoverElements = document.querySelectorAll('.animacion, .reels, .promocion, .bachi');
+const hoverElements = document.querySelectorAll('.animacion, .reels, .promocion, .presentacion');
 
 const hiddenDiv = document.querySelector('.blur');
 

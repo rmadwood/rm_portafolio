@@ -9,7 +9,34 @@
 
 body {
     background-color: #0e0e0e;
+    overflow: hidden;
 }
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    padding-top: 100px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  /* Estilos para Firefox */
+  ::-moz-scrollbar {
+    width: 10px;
+  }
+  ::-moz-scrollbar-track {
+    background: transparent;
+  }
+  ::-moz-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
 
 .barra_superior {
     display: flex;
@@ -22,19 +49,6 @@ body {
     padding-right: 30px;
     justify-content: space-between;
     align-items: center;
-}
-
-.barra a{
-    color: white;
-    font: 25px;
-    padding: 15px;
-    text-decoration: none;
-    transition: .2s ease-in-out;
-}
-
-.barra a:hover{
-    letter-spacing: 2px;
-    font-weight: 500;
 }
 
 .logo {
@@ -73,6 +87,7 @@ body {
     height: calc(70% - 60px);
     width: 1px;
     border-left: 1px solid white;
+    z-index: 901;
 }
 
 .redes{
@@ -82,6 +97,8 @@ body {
     font-size: 25px;
     justify-content: flex-end;
     align-items: center;
+    z-index: 900;
+    cursor: pointer;
 }
 
 .redes a{
@@ -111,7 +128,19 @@ body {
     margin-top: 70px;
     margin-left: 100px;
     height: 120px;
+    animation: deslizarIzquierda .8s ease-out;
 }
+
+@keyframes deslizarIzquierda {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 
 .portafolio{
     background: linear-gradient(90deg, #74ffff, #d678ff, #d678ff, #74ffff);
@@ -127,6 +156,10 @@ body {
     100% { background-position: 300%; }
 }
 
+.parrafo_1::before {
+    visibility: hidden;
+}
+
 .parrafo_1{
     display: flex;
     font-size: 27px;
@@ -135,51 +168,7 @@ body {
     font-weight: 600;
     margin-top: 180px;
     margin-left: 100px;
-}
-
-.imagen{
-    display: flex;
-    position: absolute;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.bachi{
-    display: flex;
-    height: 100%;
-    position: fixed;
-    right: 0;
-    top: 0;
-    filter: drop-shadow(0px 0px 30px #000000);
-    cursor: pointer;
-    transition: .3s ease-in-out;
-    z-index: 101;
-}
-
-.bachi:hover{
-    transform: scale(1.1);
-}
-
-.aro{
-    display: flex;
-    position: absolute;
-    animation: giro 6s infinite linear;
-    z-index: -2;
-    pointer-events: none;
-    width: 70%;
-    top: 70px;
-}
-
-@keyframes giro {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    animation: deslizarIzquierda .8s ease-out;
 }
 
 .blur {
@@ -195,6 +184,24 @@ body {
     transition: opacity .4s ease-in-out;
 }
 
+.presentacion{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    background-color: #131313;
+    width: 670px;
+    height: 670px;
+    left: 100px;
+    top: 280px;
+    border-radius: 25px;
+    box-shadow: 0 0 40px 0px #000000;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    z-index: 600;
+    animation: deslizarIzquierda .8s ease-out;
+
+}
+
 .animacion{
     display: flex;
     position: absolute;
@@ -202,21 +209,44 @@ body {
     background-color: #131313;
     width: 300px;
     height: 340px;
-    left: 100px;
+    right: 760px;
     bottom: 50px;
     border-radius: 25px;
     box-shadow: 0 0 40px 0px #000000;
     cursor: pointer;
     transition: .3s ease-in-out;
-    overflow: hidden;
+    overflow: auto;
     z-index: 500;
+    animation: deslizarAbajo .8s ease-out;
 }
+
+@keyframes deslizarAbajo {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+.flecha_1{
+    display: flex;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 30px;
+    top: 22px;
+    opacity: 50%;
+  }
+
 
 .animacion:hover, .reels:hover, .promocion:hover{
     height: 700px;
 }
 
-.animacion p, .reels p, .promocion p{
+.animacion p, .reels p, .promocion p, .presentacion p{
     display: flex;
     position: absolute;
     font-weight: bold;
@@ -236,6 +266,15 @@ body {
     position: absolute;
     top: 60px;
     border-radius: 25px;
+    margin-right: -7px
+}
+
+.vid_pre{
+    display: flex;
+    width: 85%;
+    position: absolute;
+    top: 60px;
+    border-radius: 25px;
 }
 
 .vid_ani_2{
@@ -244,6 +283,7 @@ body {
     position: absolute;
     top: 340px;
     border-radius: 25px;
+    margin-right: -7px
 }
 
 .reels{
@@ -253,14 +293,15 @@ body {
     background-color: #131313;
     width: 300px;
     height: 540px;
-    left: 430px;
+    right: 430px;
     bottom: 50px;
     border-radius: 25px;
     box-shadow: 0 0 40px 0px #000000;
     cursor: pointer;
     transition: .3s ease-in-out;
-    overflow: hidden;
+    overflow: auto;
     z-index: 500;
+    animation: deslizarAbajo .8s ease-out;
 }
 
 .vid_reels_2{
@@ -269,6 +310,7 @@ body {
     position: absolute;
     top: 540px;
     border-radius: 25px;
+    margin-right: -7px
 }
 
 .promocion{
@@ -278,14 +320,16 @@ body {
     background-color: #131313;
     width: 300px;
     height: 230px;
-    left: 760px;
+    right: 100px;
     bottom: 50px;
     border-radius: 25px;
     box-shadow: 0 0 40px 0px #000000;
     cursor: pointer;
     transition: .3s ease-in-out;
-    overflow: hidden;
+    overflow: auto;
     z-index: 500;
+    animation: deslizarAbajo .8s ease-out;
+
 }
 
 .vid_prom_2{
@@ -295,3 +339,81 @@ body {
     top: 230px;
     border-radius: 25px;
 }
+
+.speech-bubble {
+    display: flex;
+    position: absolute;
+    background: #ffffff;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 250px;
+    bottom: 30px;
+    left: 100px;
+    z-index: 700;
+    font-family: 'Montserrat', sans-serif;
+    animation: deslizarIzquierda .8s ease-out;
+}
+  
+.speech-text {
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+}
+  
+.speech-triangle {
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-right: 10px solid #ffffff;
+    border-bottom: 10px solid transparent;
+    left: -10px;
+    top: 50%;
+    margin-top: -10px;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        background-color: #0e0e0e;
+        overflow: auto;
+        align-items: center;
+    }
+
+    .contenedor {
+        width: 90%;
+        justify-content: center;
+}
+
+    .titulo {
+        font-size: 40px;
+        letter-spacing: 0px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        left: 0;
+    }
+
+    .parrafo_1{
+        font-size: 25px;
+        top: 5%;
+        text-align: center;
+    }
+
+    .presentacion {
+        width: 75%;
+        height: 22em;
+        top: 40%;
+    }
+
+    .vid_pre{
+        display: flex;
+        position: absolute;
+        border-radius: 25px;
+        width: 85%;
+    }
+
+  }
