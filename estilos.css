@@ -465,12 +465,14 @@ body {
 
     .hecho {
         display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         position: absolute;
         color: white;
-        width: 420px;
+        width: 100%;
         height: 30px;
         bottom: -1100px;
-        left: 11%;
     }
 
     .html{
@@ -481,6 +483,10 @@ body {
         right: 18px;
         opacity: 50%;
         transform: rotate(180deg);
+    }
+
+    .linea2{
+        height: calc(60% - 60px);
     }
 
   }
