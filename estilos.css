@@ -140,12 +140,14 @@ body {
 
 .titulo {
     display: flex;
+    position: absolute;
     font-size: 85px;
     letter-spacing: 7px;
     font-weight: 800;
     margin-top: 70px;
     margin-left: 100px;
     height: 120px;
+    width: 100%;
     animation: deslizarIzquierda .8s ease-out;
 }
 
@@ -331,6 +333,16 @@ body {
     margin-right: -7px
 }
 
+.vid_reels_3{
+    display: flex;
+    width: 85%;
+    position: absolute;
+    top: 1020px;
+    border-radius: 25px;
+    margin-right: -7px;
+    padding-bottom: 10px;
+}
+
 .promocion{
     display: flex;
     position: absolute;
@@ -393,6 +405,20 @@ body {
     margin-top: -10px;
 }
 
+.video_fondo {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+    mask-image: linear-gradient(to left, black 15%, transparent);
+    left: 35%;
+    opacity: 50%;
+}
+
+
 @media (max-width: 768px) {
 
     body {
@@ -407,12 +433,12 @@ body {
 }
 
     .titulo {
+        position: absolute;
         font-size: 250%;
         letter-spacing: 0px;
         justify-content: center;
         align-items: center;
         text-align: center;
-        left: 20%;
     }
 
     .parrafo_1{
@@ -487,6 +513,10 @@ body {
 
     .linea2{
         height: calc(60% - 60px);
+    }
+
+    .video_fondo {
+        display: none;
     }
 
   }
