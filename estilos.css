@@ -370,6 +370,14 @@ body {
     border-radius: 25px;
 }
 
+.vid_prom_3{
+    display: flex;
+    width: 85%;
+    position: absolute;
+    top: 400px;
+    border-radius: 25px;
+}
+
 .speech-bubble {
     display: flex;
     position: absolute;
